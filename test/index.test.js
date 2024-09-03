@@ -17,4 +17,11 @@ describe("String calculator", () => {
     4`)
     ).toEqual(10);
   });
+  it("add returns error when negative numbers are passed", () => {
+    try {
+      add("1,2,3,-4");
+    } catch (err) {
+      expect(err.message).toEqual("negative numbers not allowed <-4>");
+    }
+  });
 });
