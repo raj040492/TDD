@@ -5,3 +5,5 @@ export const sum = (arr) =>
     }
     return Number(acc);
   }, 0);
+
+export const add = (string) => string.split(",");
