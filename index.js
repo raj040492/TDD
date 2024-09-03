@@ -6,4 +6,4 @@ export const sum = (arr) =>
     return Number(acc);
   }, 0);
 
-export const add = (string) => sum(string.split(","));
+export const add = (string) => sum(string.replaceAll("\n", ",").split(","));

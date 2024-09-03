@@ -9,4 +9,12 @@ describe("String calculator", () => {
   it("add returns the sum of strings", () => {
     expect(add("1,2,3,4")).toEqual(10);
   });
+  it("new spaces are converted into commas and summed", () => {
+    expect(
+      add(`1
+    2
+    3
+    4`)
+    ).toEqual(10);
+  });
 });
