@@ -29,4 +29,11 @@ describe("String calculator", () => {
     expect(filterNegatives(["1", "2", "3", "-4", "-5"])).toEqual(["-4", "-5"]);
     expect(filterNegatives(["1", "2", "3", "4"])).toEqual([]);
   });
+  it("add returns error when multiple negative numbers are passed", () => {
+    try {
+      add("1,2,3,-4,-5,-6,7");
+    } catch (err) {
+      expect(err.message).toEqual("negative numbers not allowed <-4,-5,-6>");
+    }
+  });
 });
