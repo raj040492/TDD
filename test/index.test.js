@@ -1,4 +1,4 @@
-import { add, filterNegatives, sum } from "..";
+import { add, filterNegatives, isolateDelimiter, sum } from "..";
 describe("String calculator", () => {
   it("sums the array of numbers", () => {
     expect(sum([1, 2, 3])).toEqual(6);
@@ -35,5 +35,10 @@ describe("String calculator", () => {
     } catch (err) {
       expect(err.message).toEqual("negative numbers not allowed <-4,-5,-6>");
     }
+  });
+  it("add returns the sum of strings", () => {
+    expect(isolateDelimiter("//;\n1;2")).toEqual(";");
+    expect(isolateDelimiter("//-\n1;2")).toEqual("-");
+    expect(isolateDelimiter("//@\n1;2")).toEqual("@");
   });
 });
